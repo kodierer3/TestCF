@@ -19,6 +19,7 @@ require 'java_buildpack/container'
 require 'java_buildpack/container/tomcat/tomcat_insight_support'
 require 'java_buildpack/container/tomcat/tomcat_instance'
 require 'java_buildpack/container/tomcat/tomcat_lifecycle_support'
+require 'java_buildpack/container/tomcat/tomcat_spring_instrument'
 require 'java_buildpack/container/tomcat/tomcat_logging_support'
 require 'java_buildpack/container/tomcat/tomcat_access_logging_support'
 require 'java_buildpack/container/tomcat/tomcat_redis_store'
@@ -47,7 +48,7 @@ module JavaBuildpack
       def sub_components(context)
         [
           TomcatInstance.new(sub_configuration_context(context, 'tomcat')),
-		  TomcatSpringInstrumentSupport.new(sub_configuration_context(context, 'spring_instrument_support')),
+		  TomcatSpringInstrument.new(sub_configuration_context(context, 'spring_instrument')),
           TomcatLifecycleSupport.new(sub_configuration_context(context, 'lifecycle_support')),
           TomcatLoggingSupport.new(sub_configuration_context(context, 'logging_support')),
           TomcatAccessLoggingSupport.new(sub_configuration_context(context, 'access_logging_support')),

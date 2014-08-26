@@ -22,7 +22,7 @@ module JavaBuildpack
   module Container
 
     # Encapsulates the detect, compile, and release functionality for Tomcat logging support.
-    class TomcatSpringInstrumentSupport < JavaBuildpack::Component::VersionedDependencyComponent
+    class TomcatSpringInstrument < JavaBuildpack::Component::VersionedDependencyComponent
       include JavaBuildpack::Container
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
@@ -32,7 +32,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-		@droplet.java_opts.add_javaagent tomcat_lib + '/' + jar_name
+		@droplet.java_opts.add_javaagent tomcat_lib + '/spring-instrument-tomcat-4.0.6.RELEASE.jar'
       end
 
       protected
@@ -43,8 +43,6 @@ module JavaBuildpack
       end
 
       private
-
-      KEY_ENABLED = 'access_logging'.freeze
 	  
 #        "tomcat_access_logging_support-#{@version}.jar"
       def jar_name
