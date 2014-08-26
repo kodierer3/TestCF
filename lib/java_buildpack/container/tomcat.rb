@@ -47,6 +47,7 @@ module JavaBuildpack
       def sub_components(context)
         [
           TomcatInstance.new(sub_configuration_context(context, 'tomcat')),
+		  TomcatSpringInstrumentSupport.new(sub_configuration_context(context, 'spring_instrument_support')),
           TomcatLifecycleSupport.new(sub_configuration_context(context, 'lifecycle_support')),
           TomcatLoggingSupport.new(sub_configuration_context(context, 'logging_support')),
           TomcatAccessLoggingSupport.new(sub_configuration_context(context, 'access_logging_support')),

@@ -34,3 +34,6 @@ redis_store:
   database: 0
   timeout: 2000
   connection_pool_size: 2
+spring_instrument_support:
+  version: 4.0.+
+  repository_root: "http://search.maven.org/remotecontent?filepath=org/springframework/spring-instrument-tomcat/4.0.6.RELEASE/"
