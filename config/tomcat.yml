@@ -34,6 +34,6 @@ redis_store:
   database: 0
   timeout: 2000
   connection_pool_size: 2
-spring_instrument_support:
+spring_instrument:
   version: 4.0.+
   repository_root: "http://demopanel.dyndns.org:1235/muvon"
