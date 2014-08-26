@@ -32,7 +32,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-		@droplet.java_opts.add_javaagent(tomcat_lib + '/spring-instrument-tomcat-4.0.6.RELEASE.jar')
+		#@droplet.java_opts.add_javaagent(tomcat_lib + '/spring-instrument-tomcat-4.0.6.RELEASE.jar')
       end
 
       protected
